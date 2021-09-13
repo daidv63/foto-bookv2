@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_160023) do
+ActiveRecord::Schema.define(version: 2021_09_13_164415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "album_photos", force: :cascade do |t|
+    t.bigint "photo_id", null: false
+    t.bigint "album_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["album_id"], name: "index_album_photos_on_album_id"
+    t.index ["photo_id"], name: "index_album_photos_on_photo_id"
+  end
+
+  create_table "albums", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.text "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "hearts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "photo_id", null: false
+    t.bigint "album_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["album_id"], name: "index_hearts_on_album_id"
+    t.index ["photo_id"], name: "index_hearts_on_photo_id"
+    t.index ["user_id"], name: "index_hearts_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "image_url"
+    t.text "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +72,16 @@ ActiveRecord::Schema.define(version: 2021_09_11_160023) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "age_user"
+    t.index ["age_user"], name: "index_users_on_age_user"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "album_photos", "albums"
+  add_foreign_key "album_photos", "photos"
+  add_foreign_key "albums", "users"
+  add_foreign_key "hearts", "albums"
+  add_foreign_key "hearts", "photos"
+  add_foreign_key "hearts", "users"
 end
