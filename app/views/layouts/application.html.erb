@@ -11,6 +11,39 @@
   </head>
 
   <body>
+    <div class="header bg-main py-2">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+            <h3 class="text-white text-right">Fotobook</h3>
+          </div>
+          <div class="col-8">
+            <div class="d-flex justify-content-between">
+              <div class="search-bar w-50">
+                <input type="text" class="form-control" placeholder="Search Photo/Album">
+              </div>
+              <div class="avatar-section d-flex">
+                <div class="swap-avatar position-relative">
+                  <div class="avatar position-absolute">
+                    HN
+                  </div>
+                </div>
+                <div class="name-user my-auto pl-2">
+                  <p class="mb-0 text-white font-weight-bold">
+                    Hieu Nguyen
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 d-flex">
+            <div class="my-auto">
+              <p class="p-logout mb-0"><a class="" href="#">Logout</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

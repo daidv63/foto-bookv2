@@ -14,3 +14,33 @@
  *= require_self
  */
  @import "bootstrap";
+ $color-primary: #3C5996;
+ $color-second: #fff;
+ body{
+   background-color: #F8F8F8;
+ }
+ .bg-main{
+   background-color: $color-primary;
+ }
+ .avatar-section{
+   .swap-avatar{
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    .avatar{
+      top:20%;
+      left:20%;
+      font-weight: 700;
+      color:  $color-primary;
+    }
+  }
+ }
+ .p-logout{
+   a{
+    color: $color-second;
+    font-weight: bold;
+    display: block;
+   }
+
+ }
