@@ -42,8 +42,27 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
     </div>
-    <%= yield %>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2 left-side-bar">
+            <p class="navigation-feed">
+              <a class="active" href="/feed">Feeds</a>
+            </p>
+            <p class="navigation-discover">
+              <a href="/discover">Discover</a>
+            </p>
+          </div>
+          <div class="col-8">
+            <%= yield %>
+          </div>
+          <div class="col-2 right-side">
+
+          </div>
+      </div>
+    </div>
   </body>
 </html>
