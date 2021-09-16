@@ -16,9 +16,9 @@
 
 @import "bootstrap";
 $color-primary: #3C5996;
-$color-second: #fff;
+$color-second: #F8F8F8;
 body{
-  background-color: #F8F8F8;
+  background-color: $color-second;
 }
 .bg-main{
   background-color: $color-primary;
@@ -73,6 +73,31 @@ body{
       &.active{
         background: $color-primary;
         color: #fff;
+      }
+    }
+  }
+}
+
+.photo{
+  background: #fff;
+  padding: 0 0.5rem;
+  .swap-photo-block{
+    background: $color-second;
+
+    .block-image{
+  
+    }
+    .block-info{
+      .small-icon{
+        width: 40px;
+        height: 40px;
+        background: $color-primary;
+        border-radius: 50%;
+        p.block-info-icon{
+          color: #fff;
+          top:20%;
+          left:20%;
+        }
       }
     }
   }
