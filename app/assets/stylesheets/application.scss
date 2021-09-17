@@ -15,6 +15,7 @@
  */
 
 @import "bootstrap";
+
 $color-primary: #3C5996;
 $color-second: #F8F8F8;
 body{
@@ -81,11 +82,15 @@ body{
 .photo{
   background: #fff;
   padding: 0 0.5rem;
+  height: 250px;
   .swap-photo-block{
     background: $color-second;
-
     .block-image{
-  
+      img.thumb-image{
+        object-fit: cover;
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+      }
     }
     .block-info{
       .small-icon{
