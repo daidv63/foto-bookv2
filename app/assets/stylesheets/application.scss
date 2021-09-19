@@ -82,7 +82,7 @@ body{
 .photo{
   background: #fff;
   padding: 0 0.5rem;
-  height: 250px;
+  height: 260px;
   .swap-photo-block{
     background: $color-second;
     .block-image{
@@ -102,6 +102,14 @@ body{
           color: #fff;
           top:20%;
           left:20%;
+        }
+      }
+    }
+    .react-area{
+      i.bi-heart-fill{
+        color: #ddd9d9;
+        &.active{
+          color: $color-primary;
         }
       }
     }
