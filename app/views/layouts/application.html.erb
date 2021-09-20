@@ -59,8 +59,8 @@
           <div class="col-8 bg-white mt-4">
             <div class="main-content-nav d-flex justify-content-center mt-4">
               <div class="btn-group" role="group">
-                <a class="btn active">PHOTO</a>
-                <a class="btn">ALBUM</a>
+                <a class="btn <%= checkParams('photo') ? 'active' : '' %>" href="?type=photo">PHOTO</a>
+                <a class="btn <%= checkParams('album') ? 'active' : '' %>" href="?type=album">ALBUM</a>
               </div>
             </div>
 
