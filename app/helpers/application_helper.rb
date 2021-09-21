@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def checkParams(type)
     unless request.query_parameters["type"]
-      return true
+      return type=="photo"
     end
     return request.query_parameters["type"] == type
   end
