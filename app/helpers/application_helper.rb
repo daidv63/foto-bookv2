@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def checkPath(path)
-    return  request.original_fullpath.include?(path)
+    return request.original_fullpath.include?(path)
   end
 
   def checkParams(type)

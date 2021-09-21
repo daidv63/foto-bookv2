@@ -78,11 +78,11 @@ body{
   }
 }
 
-.photo{
+.item{
   background: #fff;
   padding: 0 0.5rem;
   height: 260px;
-  .swap-photo-block{
+  .swap-item-block{
     background: $color-second;
     .block-image{
       img.thumb-image{
@@ -111,6 +111,25 @@ body{
           color: $color-primary;
         }
       }
+    }
+  }
+}
+
+.block-image-album{
+  .thumb-image-album{
+    top: 8%;
+    left: 8%;
+    width: 80%;
+    height: 83%;
+    object-fit: cover;
+    &-one{
+      transform: rotate(12deg);
+    }
+    &-two{
+      transform: rotate(6deg);
+    }
+    &-three{
+      transform: rotate(0deg);
     }
   }
 }
