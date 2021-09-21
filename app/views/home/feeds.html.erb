@@ -1,7 +1,8 @@
 <div class="row px-3 my-4">
-  <% 5.times do%>
+  <% 4.times do%>
     <div class="col-6 mb-3">
       <%= render 'photo' if checkParams("photo")%>
+      <%= render 'album' if checkParams("album")%>
     </div>
   <%end%>
 </div>
